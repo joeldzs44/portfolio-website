@@ -1,0 +1,6 @@
+{
+  "technical": ["Python", "SQL", "Azure Functions", "Azure Data Factory", "MongoDB", "Power Automate", "REST API"],
+  "reporting": ["Power BI", "Data Modelling", "Data Visualization", "Model Performance Optimization", "Data Security"],
+  "development": ["Git", "JIRA", "Confluence", "Kanban", "Excel", "Agile Framework"]
+}
+

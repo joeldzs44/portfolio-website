@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "ETL Automation Pipeline",
+    "description": "Developed an end-to-end ETL automation solution using Azure Functions and Python, increasing data refresh rates by 800%.",
+    "technologies": ["Python", "Azure Functions", "SQL"],
+    "image": "/placeholder.svg?height=200&width=400"
+  },
+  {
+    "id": 2,
+    "title": "Power BI Dashboard Suite",
+    "description": "Created a suite of interactive Power BI dashboards for real-time business analytics, serving 500+ weekly users.",
+    "technologies": ["Power BI", "DAX", "M Language"],
+    "image": "/placeholder.svg?height=200&width=400"
+  },
+  {
+    "id": 3,
+    "title": "Workflow Optimization Tool",
+    "description": "Built a custom workflow optimization tool using Power Automate, reducing manual processes by 40%.",
+    "technologies": ["Power Automate", "SharePoint", "Microsoft 365"],
+    "image": "/placeholder.svg?height=200&width=400"
+  }
+]
+
