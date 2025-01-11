@@ -27,9 +27,12 @@ export default function Hero({ id }: { id?: string }) {
 
         <p className="max-w-[600px] text-muted-foreground text-lg mb-8 animate-slide-up">
           I create data-driven solutions that prioritize{' '}
-          <span className="text-primary">efficiency</span>,{' '}
+          {/* <span className="text-primary">efficiency</span>,{' '}
           <span className="text-accent">reliability</span> and{' '}
-          <span className="text-secondary">scalability</span>.
+          <span className="text-secondary">scalability</span>. */}
+          <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-sm">efficiency</span>,{' '}
+          <span className="bg-accent/10 text-accent px-2 py-1 rounded-full text-sm">reliability</span> and{' '}
+          <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-sm">scalability</span>.
         </p>
         <p className="max-w-[800px] text-muted-foreground mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
           Results-oriented Software Engineer with expertise in ETL automation and data visualization, 
