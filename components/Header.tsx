@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
 
@@ -13,7 +14,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-bold">
-            Joel<span className="text-primary">.</span>
+            <Image src="logo.svg" alt="Logo" width={40} height={40} />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
@@ -23,7 +24,7 @@ export default function Header() {
             <Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Services
             </Link>
-            <Link href="/#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="/projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Projects
             </Link>
             <Link href="/#experience" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
