@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import ReactMarkdown from 'react-markdown'
 import {Project} from '../lib/interfaces'
 import Link from 'next/link'
 
@@ -26,14 +25,16 @@ export default function Projects({ id }: { id?: string }) {
     <section id={id} className="py-20">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl font-bold mb-12 text-left"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Projects
+          Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        
+        <div className="grid grid-cols-1 grid-rows-3 gap-0">
           {projects.map((project, index) => (
             <motion.div 
               key={project.id} 
@@ -42,31 +43,28 @@ export default function Projects({ id }: { id?: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Image src={project.image} alt={project.title} width={100} height={100} className="w-auto mx-auto" />
-              <div className="p-6">
-                <Link href={`/projects/${project.slug}`} className="text-xl font-semibold mb-2">{project.title}</Link>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-sm">
-                      {tech}
-                    </span>
-                  ))}
+              {/* ADD Description as a tooltip */}
+              {/* Further Optimization needed for screens width < 670px */}
+              <div className="p-6 flex flex-row sm:gap-0 min-w-full">
+                <div>
+                  <Link href={`/projects/${project.slug}`} className="text-2xl font-semibold">{project.title}</Link>
+                  <hr className='opacity-5 my-2'/>
+                  <div>
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="bg-primary/25 dark:bg-primary/10 dark:text-accent mx-1 px-2 py-1 rounded-full text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="prose prose-sm">
-                  <span className=''>
-                    {project.description}
-                  </span>
-                  {/* <ReactMarkdown>
-                    {project.content.length > 200 ? `${project.content.substring(0, 200)}...` : project.content}
-                  </ReactMarkdown>
-                  {project.content.length > 200 && (
-                    <Link href={`/projects/${project.slug}`} className="text-primary hover:underline">Read more</Link>
-                  )} */}
+                <div className='ml-auto mr-24 lg:mr-20 md:mr-16 sm:mr-6 rounded-full border-2 p-4'>
+                  <p className='text-right text-4xl md:text-2xl sm:text-xl'>{index+1}</p>
                 </div>
               </div>
+              <hr className='border opacity-50'/>
             </motion.div>
-          ))}
+          ))
+          }
         </div>
       </div>
     </section>

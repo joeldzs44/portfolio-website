@@ -11,27 +11,18 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-bold">
             <Image src="logo.svg" alt="Logo" width={40} height={40} />
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-16 px-16 py-1 border rounded-full border-black/10 dark:border-white/10">
             <Link href="/#hero" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Home
             </Link>
-            <Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Services
-            </Link>
             <Link href="/projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Projects
-            </Link>
-            <Link href="/#experience" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Experience
-            </Link>
-            <Link href="/#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Skills
             </Link>
             <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Blog
@@ -60,42 +51,21 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               <Link
                 href="/#hero"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground text-right mr-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
-                href="/#services"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
                 href="/#projects"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground text-right mr-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
               </Link>
               <Link
-                href="/#experience"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Experience
-              </Link>
-              <Link
-                href="/#skills"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Skills
-              </Link>
-              <Link
                 href="/blog"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground text-right mr-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
