@@ -6,19 +6,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-scroller {
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-}
-
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
 
 @layer base {
   :root {
-    --background: #ffffff;
+    --background: #ffea76;
     --foreground: #0a0a0a;
     --card: #ffffff;
     --card-foreground: #0a0a0a;
@@ -51,8 +47,6 @@ scroller {
     --sidebar-accent-foreground: #0a0a0a;
     --sidebar-border: #d9d9d9;
     --sidebar-ring: #3f3f3f;
-    --skills-bg: var(--background);
-    --skills-border: #000000;
   }
   .dark {
     --background: #0a0a0a;
@@ -87,8 +81,6 @@ scroller {
     --sidebar-accent-foreground: #f3f3f3;
     --sidebar-border: #282828;
     --sidebar-ring: #339af0;
-    --skills-bg: #ffffff;
-    --skills-border: #ff0000;
   }
 }
 
@@ -98,5 +90,30 @@ scroller {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Styles */
+
+.india-gradient {
+  margin-left: 5rem;
+  background: rgb(255,141,0);
+  background: linear-gradient(90deg, rgba(255,141,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,89,9,1) 100%);
+}
+
+/* Custom Animations */
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
 }

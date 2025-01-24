@@ -3,7 +3,7 @@ import experienceData from '../app/data/work-experience.json'
 export default function WorkExperience({ id }: { id?: string }) {
   return (
     <section id={id} className="py-20">
-      <div className="container px-4">
+      <div className="container px-4 mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">EXPERIENCE</h2>
         <div className="space-y-8">
           {experienceData.map((exp, index) => (
