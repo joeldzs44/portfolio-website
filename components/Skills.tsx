@@ -2,9 +2,9 @@ import skillsData from '../app/data/skills.json'
 
 export default function Skills({ id }: { id?: string }) {
   return (
-    <section id={id} className="py-20 bg-card">
+    <section id={id} className="py-20">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">MY TECH STACK</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">SKILLS</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <SkillCategory title="Technical Skills" skills={skillsData.technical} gradientClass="gradient-text" delay={0} />
           <SkillCategory title="Reporting Skills" skills={skillsData.reporting} gradientClass="accent-gradient-text" delay={0.2} />

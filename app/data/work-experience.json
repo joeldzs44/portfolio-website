@@ -1,29 +1,39 @@
 [
   {
+    "id": 4,
+    "logo": "GEP-Logo-SVG.svg",
+    "company": "GEP",
+    "location": "Mumbai, India",
+    "title": "Data Scientist",
+    "duration": "Oct 2024 - Present",
+    "achievements": ["Did this", "Did that"]
+  },
+  {
+    "id": 3,
+    "logo": "GEP-Logo-SVG.svg",
+    "company": "GEP",
+    "location": "Mumbai, India",
+    "title": "Senior Software Engineer",
+    "duration": "June 2024 - Sep 2024",
+    "achievements":["Did this", "Did that"]
+  },
+  {
+    "id": 2,
+    "logo": "GEP-Logo-SVG.svg",
+    "company": "GEP",
+    "location": "Mumbai, India",
+    "title": "Software Engineer",
+    "duration": "June 2022 - Present",
+    "achievements":["Did this", "Did that"]
+  },
+  {
     "id": 1,
     "logo": "GEP-Logo-SVG.svg",
     "company": "GEP",
     "location": "Mumbai, India",
-    "positions": [
-      {
-        "title": "Data Scientist",
-        "duration": "Oct 2024 - Present"
-      },
-      {
-        "title": "Senior Software Engineer",
-        "duration": "June 2024 - Sep 2024"
-      },
-      {
-        "title": "Software Engineer",
-        "duration": "June 2022 - Present"
-      },
-      {
-        "title": "Associate Software Engineer",
-        "duration": "June 2021 - June 2022"
-      }
-    ],
-    "achievements": [
-    ]
+    "title": "Associate Software Engineer",
+    "duration": "June 2021 - June 2022",
+    "achievements":["Did this", "Did that"]
   }
 ]
 
