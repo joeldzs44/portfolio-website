@@ -6,7 +6,7 @@ export default function ContactForm({ id }: { id?: string }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '',
+    message: ''
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -14,11 +14,29 @@ export default function ContactForm({ id }: { id?: string }) {
     setFormData(prevState => ({ ...prevState, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message!')
-    setFormData({ name: '', email: '', message: '' })
+    
+    console.log('Submitting form:', formData)
+    console.log('Form STRINGIFY:', JSON.stringify(formData))
+
+    await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data)
+        alert('Thank you for your message!')
+        setFormData({ name: '', email: '', message: '' })
+      })
+      .catch(error => {
+        console.error('Error:', error)
+        alert('There was an error submitting your message. Please try again later.')
+      })
   }
 
   return (
