@@ -6,10 +6,12 @@ import Skills from '@/components/Skills'
 import WorkExperience from '@/components/WorkExperience'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Analytics />
       <Header />
       <main className="flex-grow">
         <Hero id="hero" />
