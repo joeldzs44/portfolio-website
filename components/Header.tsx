@@ -57,7 +57,7 @@ export default function Header() {
                 Home
               </Link>
               <Link
-                href="/#projects"
+                href="/projects"
                 className="text-sm text-muted-foreground hover:text-foreground text-right mr-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >

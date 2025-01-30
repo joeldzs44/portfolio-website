@@ -30,7 +30,7 @@ export default function Hero({ id }: { id?: string }) {
 
   return (
     <section id={id} className="min-h-screen flex items-center justify-center pt-16">
-      <div className="container px-4 py- flex flex-col items-center text-center">
+      <div className="container px-4 py-4 flex flex-col items-center text-center">
 
         <Image
           src={portrait}
@@ -59,8 +59,8 @@ export default function Hero({ id }: { id?: string }) {
           </span>
         </h2>
 
-        <p className="max-w-[600px] text-md mb-8 animate-slide-up">
-          from 📍🗺️ Mumbai, India. I create data-driven solutions that prioritize{' '}
+        <p className="max-w-[600px] text-md mb-8 animate-slide-up md:leading-normal leading-relaxed">
+          from 📍🗺️ <span className='font-baskervville india-gradient'>Mumbai, India.</span> I create data-driven solutions that prioritize{' '}
           <span className="bg-primary/25 dark:bg-secondary/10 text-primary dark:text-secondary px-2 py-1 rounded-full text-sm">efficiency</span>,{' '}
           <span className="bg-primary/25 dark:bg-secondary/10 text-primary dark:text-secondary px-2 py-1 rounded-full text-sm">reliability</span> and{' '}
           <span className="bg-primary/25 dark:bg-secondary/10 text-primary dark:text-secondary px-2 py-1 rounded-full text-sm">scalability</span>.

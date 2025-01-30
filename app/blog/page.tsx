@@ -5,7 +5,7 @@ import blogPosts from '../data/blog-posts.json'
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mt-16">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Blog Posts</h1>

@@ -42,7 +42,7 @@ export default function ContactForm({ id }: { id?: string }) {
   return (
     <section id={id} className="py-20 bg-card">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">GET IN TOUCH</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in font-baskervville">Let's connect.</h2>
         <div className="text-center mb-8 animate-slide-up">
         </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto animate-scale-in">

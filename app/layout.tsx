@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Inter, PT_Sans } from 'next/font/google'
+import '../styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const pt_sans = PT_Sans({ subsets: ['latin'], weight: "400" })
 
 export const metadata: Metadata = {
   title: 'Joel Dsouza - Software Engineer',
-  description: 'Portfolio website of Joel Dsouza, Software Engineer specializing in ETL automation and data visualization',
+  description: 'Portfolio website of Joel Dsouza, Data Scientist and a software engineer.',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={pt_sans.className}>
         <ThemeProvider defaultTheme="dark">
           {children}
         </ThemeProvider>
