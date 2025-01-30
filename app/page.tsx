@@ -7,6 +7,7 @@ import WorkExperience from '@/components/WorkExperience'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 import { Analytics } from "@vercel/analytics/react"
+import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <WorkExperience id="experience" />
         <Skills id="skills" />
         <ContactForm id="contact" />
+        <ScrollToTopButton />
       </main>
       <Footer />
     </div>

@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {Project} from '../lib/interfaces'
 import Link from 'next/link'
 import Tooltip from './Tooltip';
-
 
 export default function Projects({ id }: { id?: string }) {
   const [projects, setProjects] = useState<Project[]>([])
@@ -26,12 +24,12 @@ export default function Projects({ id }: { id?: string }) {
     <section id={id} className="py-20">
       <div className="container mx-auto px-0">
         <motion.h2 
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl font-bold mb-12 text-center font-baskervville"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
-          PROJECTS
+          Things I've built.
         </motion.h2>
         
         
@@ -65,7 +63,7 @@ export default function Projects({ id }: { id?: string }) {
                 </div>
               </Tooltip>
               <hr className='border opacity-50'/>
-            </motion.div>
+              </motion.div>
           ))
           }
         </div>

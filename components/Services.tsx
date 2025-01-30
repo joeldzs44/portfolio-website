@@ -4,7 +4,7 @@ const services = [
   {
     icon: Bot,
     title: 'Gen AI',
-    description: 'Build custom cutting-edge scalable Gen AI solutions for tailoerd to your unique business problems for maximum impact. Harness the power of AI to innovate, optimize, and elevate your operations.'
+    description: 'Build custom cutting-edge scalable Gen AI solutions for tailored to your unique business problems for maximum impact. Harness the power of AI to innovate, optimize, and elevate your operations.'
   },
   {
     icon: WholeWord,
@@ -27,7 +27,7 @@ export default function Services({ id }: { id?: string }) {
   return (
     <section id={id} className="py-20 bg-card mx-auto">
       <div className="container px-4 mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-12 animate-fade-in">WHAT I DO</h2>
+        <h2 className="text-3xl font-bold mb-12 animate-fade-in font-baskervville">What I do.</h2>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-10">
           {services.map((service, index) => (
             <div

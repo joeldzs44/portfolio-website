@@ -11,7 +11,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/joeldzs44"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Tooltip message='linkedin.com/in/joeldzs44'>
                 <Linkedin className="w-6 h-6" />
@@ -23,7 +23,7 @@ export default function Footer() {
               href="https://github.com/joeldzs44/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Tooltip message='github.com/joeldzs44'>
                 <Github className="w-6 h-6" />
@@ -33,7 +33,7 @@ export default function Footer() {
 
             <a
               href="mailto:joeldzs44@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               {/* add tooltip which shows id */}
               <Tooltip message='joeldzs44@gmail.com'>

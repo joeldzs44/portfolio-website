@@ -12,7 +12,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mt-16">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         <article className="max-w-3xl mx-auto">

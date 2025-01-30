@@ -4,7 +4,7 @@ export default function WorkExperience({ id }: { id?: string }) {
   return (
     <section id={id} className="py-20 bg-card">
       <div className="container mx-auto min-w-screen">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">WORK EXPERIENCE</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in font-baskervville">My journey so far.</h2>
         <div className="relative wrap overflow-hidden h-full bg-card dark:bg-card p-6">
           <div className="border-2-2 absolute border-black dark:border-white h-[75%] lg:h-[80&] m-0 p-0 border left-1/2"></div>
 
