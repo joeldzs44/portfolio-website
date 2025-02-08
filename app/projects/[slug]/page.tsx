@@ -1,63 +1,68 @@
-'use client'
-
-import React from 'react';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useEffect, useState } from 'react';
-import { Project } from '../../../lib/interfaces';
+import MDXContent from '@/lib/mdx-content';
 
-import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+import { getProjectBySlug } from '../utils';
 
-  useEffect(() => {
-    async function loadProjects() {
-      const response = await fetch('/api/projects');
-      if (response.ok) {
-        const data = await response.json();
-        setProjects(data);
-      } else {
-        console.error('Failed to fetch projects:', response.statusText);
-      }
-      setLoading(false);
-    }
 
-    loadProjects();
-  }, []);
+export default async function ProjectPage({params}: {params: { slug: string }}) {
+  params = await params
+  const { slug, frontmatter, content, status } = await getProjectBySlug(params.slug);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) {
-    notFound();
+  if (status === 404) {
+    notFound()
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col mt-16 mx-0">
       <Header />
-      <div className="min-h-screen my-16 flex flex-col mt-16">
-        <main className="flex-grow container mx-auto px-4 py-8">
-          <article className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-            <div className="content dark:prose-invert max-w-none">
-                <ReactMarkdown className='[all: unset]'>
-                    {project.content}
-                </ReactMarkdown>
-            </div>
-            <Link href="/projects" className="text-primary hover:underline mt-8 inline-block">
-              ← Back to all projects
-            </Link>
-          </article>
-        </main>
+      <div className="mx-auto mb-10 w-[90%] lg:w-[70%]">
+          {frontmatter && (
+            <>
+              {/* mobile version */}
+              <div className="md:hidden flex flex-col mx-auto min-w-full justify-between">
+                <div className='mx-auto mb-5'>
+                  <Image className='mr-auto' src={frontmatter.image} alt={frontmatter.title} width={300} height={300}/>
+                </div>
+                <div className='text-center'>
+                  <p className="text-3xl font-bold mb-4">{frontmatter.title}</p>
+                  <p className="text-lg text-muted-foreground mb-4">{frontmatter.description}</p>
+                  <p className="flex flex-wrap gap-2 justify-center">
+                    {frontmatter.technologies.map((tech: string) => (
+                      <span key={tech} className="px-3 py-1 rounded-3xl text-sm border dark:border-border dark:bg-border/90">{tech}</span>
+                    ))}
+                  </p>
+                </div>
+              </div>
+
+              {/* for larger screens */}
+              <div className="hidden md:flex md:flex-row mx-auto min-w-full justify-between">
+                <div>
+                  <p className="text-3xl font-bold mb-4">{frontmatter.title}</p>
+                  <p className="text-lg text-muted-foreground mb-4">{frontmatter.description}</p>
+                  <p className="flex flex-wrap gap-2">
+                    {frontmatter.technologies.map((tech: string) => (
+                      <span key={tech} className="px-3 py-1 rounded-3xl text-sm border dark:border-border dark:bg-border/90">{tech}</span>
+                    ))}
+                  </p>
+                </div>
+                <div>
+                  <Image className='mr-auto' src={frontmatter.image} alt={frontmatter.title} width={300} height={300}/>
+                </div>
+              </div>
+            </>
+          )}
+          <hr className='my-4'/>
+          {content && (
+            <div className="prose dark:prose-invert max-w-none">
+              <MDXContent content={content} />
+            </div>  
+          )}
       </div>
       <Footer />
-    </>
-  );
+    </div>
+  )
 }

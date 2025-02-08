@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
+import logo from '@/app/assets/logo.svg'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,7 +15,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-bold">
-            <Image src="logo.svg" alt="Logo" width={40} height={40} />
+            <Image src={logo} alt="Logo" width={40} height={40} />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-16 px-16 py-1 border rounded-full border-black/10 dark:border-white/10">

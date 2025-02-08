@@ -1,23 +1,12 @@
-'use client'
-
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { useState, useEffect } from 'react'
 import { Project } from '../../lib/interfaces'
+import { getAllProjects } from './utils'
 
-export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([])
 
-  useEffect(() => {
-    async function loadProjects() {
-      const response = await fetch('/api/projects');
-      const data = await response.json();
-      setProjects(data);
-    }
-
-    loadProjects();
-  }, []);
+export default async function ProjectsPage() {
+  const projects = await getAllProjects();
 
   return (
     <div className="min-h-screen flex flex-col mt-16">
@@ -25,8 +14,8 @@ export default function ProjectsPage() {
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Projects</h1>
         <div className="grid gap-8">
-          {projects.map((project) => (
-            <article key={project.id} className="bg-card rounded-lg p-6 shadow-md">
+          {projects.map((project: Project) => (
+            <article key={project.slug} className="bg-card rounded-lg p-6 shadow-md">
               <h2 className="text-2xl font-semibold mb-2">
                 <Link href={`/projects/${project.slug}`} className="hover:text-primary transition-colors">
                   {project.title}
