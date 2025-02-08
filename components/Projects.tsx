@@ -5,15 +5,15 @@ import { motion } from 'framer-motion'
 import {Project} from '../lib/interfaces'
 import Link from 'next/link'
 import Tooltip from './Tooltip';
+import { getAllProjects } from '@/app/projects/utils';
 
 export default function Projects({ id }: { id?: string }) {
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
     async function loadProjects() {
-      const response = await fetch('/api/projects');
-      const data = await response.json();
-      const dataTopThree = data.slice(0, 3);
+      const response = await getAllProjects();
+      const dataTopThree = response.slice(0, 3);
       setProjects(dataTopThree);
     }
 
