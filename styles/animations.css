@@ -44,6 +44,22 @@
     transform: scale(1.05);
   }
 
+  .hover-move-right {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-move-right:hover {
+    transform: translateX(10px);
+  }
+
+  .hover-move-left {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-move-left:hover {
+    transform: translateX(-10px);
+  }
+
 /* Custom Animations */
 
 .blink {
