@@ -25,8 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={pt_sans.className}>
-        <ThemeProvider defaultTheme="dark">
+        <ThemeProvider defaultTheme="dark" attribute="class">
           {children}
         </ThemeProvider>
       </body>
