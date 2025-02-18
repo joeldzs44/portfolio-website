@@ -38,7 +38,9 @@ const nextConfig = {
     })
     return config
   },
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx', 'md']
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx', 'md'],
+  // Explicitly set app directory as the source
+  useFileSystemPublicRoutes: true,
 }
 
 const config = withMDX(nextConfig)

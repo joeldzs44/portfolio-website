@@ -11,7 +11,6 @@ import ScrollToTopButton from '@/components/ScrollToTopButton'
 import ThreeScene from '@/components/ThreeScene'
 
 export default function Home() {
-
   return (
     <>
       <Analytics />
