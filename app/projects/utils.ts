@@ -12,6 +12,8 @@ interface ProjectFrontmatter {
   description: string;
   technologies: string[];
   image: string;
+  link: string;
+  demo: string;
 }
 
 const projectsDirectory = path.join(process.cwd(), 'app/data/content/projects')
